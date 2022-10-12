@@ -27,3 +27,8 @@ class SignupPageTest(TestCase):
     def test_signup_page_status_code(self):
         response = self.client.get('/users/signup/')
         self.assertEqual(response.status_code,200)
+
+    # Test for url name
+    def test_url_name(self):
+        response = self.client.get(reverse('signup'))
+        self.assertEqual(response.status_code,200)
