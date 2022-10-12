@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     # create apps
     'users.apps.UsersConfig',
+    'pages.apps.PagesConfig',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
