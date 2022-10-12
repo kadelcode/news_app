@@ -1,3 +1,4 @@
+from re import template
 from urllib import response
 from django.test import SimpleTestCase, TestCase
 from django.contrib.auth import get_user_model
@@ -32,3 +33,9 @@ class SignupPageTest(TestCase):
     def test_url_name(self):
         response = self.client.get(reverse('signup'))
         self.assertEqual(response.status_code,200)
+
+    # Test signup page for the correct template
+    def test_signup_template(self):
+        response = self.client.get(reverse('signup'))
+        self.assertEqual(response.status_code,200)
+        self.assertTemplateUsed(response,'registration/signup.html')
